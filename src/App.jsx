@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Main from './components/Main';
+import Question from './components/Question';
 import StartScreen from './components/StartScreen';
 import Subject from './components/Subject';
 import ThemeSwitch from './components/ThemeSwitch';
@@ -10,16 +11,30 @@ import {initialState, reducer} from './reducer/reducer';
 import {useReducer} from 'react';
 
 export default function App() {
-  const [{theme, selectedSubject}, dispatch] = useReducer(reducer, initialState);
-  console.log(data);
+  const [{theme, selectedSubject, stage, index, selectedOption}, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
+
+  const numQuestions = selectedSubject?.questions.length;
+
   return (
     <div className="app">
       <Header selectedSubject={selectedSubject}>
-        {selectedSubject && <Subject />}
+        {selectedSubject && <Subject subject={selectedSubject} />}
         <ThemeSwitch theme={theme} dispatch={dispatch} />
       </Header>
       <Main>
-        <StartScreen data={data} />
+        {stage === 'ready' && <StartScreen data={data} dispatch={dispatch} />}
+        {stage === 'startGame' && (
+          <Question
+            dispatch={dispatch}
+            question={selectedSubject.questions[index]}
+            numQuestions={numQuestions}
+            index={index}
+            selectedOption={selectedOption}
+          />
+        )}
       </Main>
     </div>
   );

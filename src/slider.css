@@ -57,3 +57,34 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* Progress bar */
+progress {
+  width: 100%;
+  height: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  border: none;
+}
+
+/* WebKit Browsers */
+progress::-webkit-progress-bar {
+  background-color: var(--bg-container);
+  border-radius: 5px;
+  height: 100%;
+  border: none;
+}
+
+progress::-webkit-progress-value {
+  background-color: #a729f5;
+  border-radius: 5px;
+  height: 8px;
+  border: none;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+  border-radius: 5px;
+  height: 8px;
+}

@@ -1,7 +1,9 @@
 export const initialState = {
   theme: 'light',
-
-  selectedSubject: '',
+  selectedSubjectData: '',
+  stage: 'ready',
+  index: 4,
+  selectedOption: null,
 };
 
 export function reducer(state, action) {
@@ -13,6 +15,11 @@ export function reducer(state, action) {
         ...state,
         theme: newTheme,
       };
+    case 'SELECT_SUBJECT':
+      return {...state, selectedSubject: action.payload, stage: 'startGame'};
+    case 'SELECT_OPTION':
+      return {...state, selectedOption: action.payload};
+    case 'NEXT_QUESTION':
     default:
       return state;
   }

@@ -1,8 +1,4 @@
-export default function Subject({subject}) {
-  console.log(subject);
-  const {title, icon} = subject;
-  console.log(icon);
-
+export default function Subject({subject = '', title = ''}) {
   let typeBoxColor;
   if (subject.title === 'HTML') {
     typeBoxColor = '#FFF1E9';
@@ -18,9 +14,9 @@ export default function Subject({subject}) {
     <>
       <div className="left">
         <div style={{backgroundColor: typeBoxColor}} className="type-box">
-          <img src={icon} alt="icon" />
+          <img src={subject.icon} alt="icon" />
         </div>
-        <p className="subject__title">{title}</p>
+        <p className="subject__title">{subject.title}</p>
       </div>
     </>
   );
