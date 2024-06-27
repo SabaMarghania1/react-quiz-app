@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url(slider.css);
 
 :root {
   --main-bg: #f4f6fa;
@@ -8,6 +9,11 @@
   --btn-bg-h: ;
 
   --text-main: #313e51;
+
+  --bg-image-s: url('./assets/pattern-background-mobile-light.svg');
+
+  --sun: url('./assets/icon-sun-dark.svg');
+  --moon: url('./assets/icon-moon-dark.svg');
 }
 
 [data-theme='dark'] {
@@ -16,6 +22,11 @@
   --shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
 
   --text-main: #fff;
+
+  --bg-image-s: url('./assets/pattern-background-mobile-dark.svg');
+
+  --sun: url('./assets/icon-sun-light.svg');
+  --moon: url('./assets/icon-moon-light.svg');
 }
 
 * {
@@ -23,7 +34,54 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Rubik', sans-serif;
+  background-color: var(--main-bg);
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg-image-s);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.app {
+  padding: 16px 24px;
+}
+
+.header-alone {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.sun {
+  width: 16px;
+  height: 16px;
+  background-image: var(--sun);
+  background-size: cover;
+}
+
+.moon {
+  width: 16px;
+  height: 16px;
+  background-image: var(--moon);
+  background-size: cover;
 }
