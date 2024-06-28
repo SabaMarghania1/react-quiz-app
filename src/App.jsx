@@ -6,15 +6,17 @@ import Subject from './components/Subject';
 import ThemeSwitch from './components/ThemeSwitch';
 import data from './data';
 
+import EndScreen from './components/EndScreen';
+
 import {initialState, reducer} from './reducer/reducer';
 
 import {useReducer} from 'react';
 
 export default function App() {
-  const [{theme, selectedSubject, stage, index, selectedOption}, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [
+    {theme, selectedSubject, stage, index, selectedOption, submitted, score, error},
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const numQuestions = selectedSubject?.questions.length;
 
@@ -33,7 +35,12 @@ export default function App() {
             numQuestions={numQuestions}
             index={index}
             selectedOption={selectedOption}
+            submitted={submitted}
+            error={error}
           />
+        )}
+        {stage === 'result' && (
+          <EndScreen selectedSubject={selectedSubject} score={score} numQuestions={numQuestions} />
         )}
       </Main>
     </div>

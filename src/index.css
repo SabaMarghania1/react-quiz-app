@@ -201,6 +201,12 @@ header {
   margin-bottom: 12px;
 }
 
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .options .type-box {
   background-color: var(--small-bg);
   color: var(--text-sm);
@@ -214,6 +220,7 @@ header {
   height: 64px;
   font-size: 18px;
   gap: 16px;
+  justify-content: space-between;
 }
 
 .option p {
@@ -236,4 +243,53 @@ header {
   padding: 18px 0;
   border-radius: 12px;
   box-shadow: var(--shadow);
+}
+
+.option.correct {
+  border-color: #26d782;
+}
+
+.option.incorrect {
+  border-color: #ee5454;
+}
+
+.type-box.correct-box {
+  background-color: #26d782;
+  color: white;
+}
+
+.type-box.incorrect-box {
+  background-color: #ee5454;
+}
+
+.border-selected {
+  border: 2px solid #a729f5;
+}
+
+.active-box {
+  background-color: #f0f0f0;
+}
+
+.error-message {
+  color: #ee5454;
+  margin-top: 10px;
+}
+
+.correct {
+  border-color: #26d782;
+}
+
+.incorrect {
+  border-color: #ee5454;
+}
+
+/* Finish game  */
+.endGame h1 {
+  font-size: 40px;
+  color: var(--text-main);
+  font-weight: 300;
+}
+
+.endGame h1 span {
+  font-weight: 500;
 }
