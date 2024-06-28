@@ -1,5 +1,5 @@
 export const initialState = {
-  theme: 'light',
+  theme: 'dark',
   selectedSubjectData: '',
   stage: 'ready',
   index: 9,
