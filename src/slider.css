@@ -64,7 +64,7 @@ progress {
   height: 16px;
   padding: 5px;
   border-radius: 5px;
-  background-color: #f3f3f3;
+  background-color: var(--bg-container);
   border: none;
 }
 
@@ -72,7 +72,7 @@ progress {
 progress::-webkit-progress-bar {
   background-color: var(--bg-container);
   border-radius: 5px;
-  height: 100%;
+  height: 8px;
   border: none;
 }
 
@@ -87,4 +87,20 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   border-radius: 5px;
   height: 8px;
+}
+
+@media (min-width: 768px) {
+  progress {
+    height: 8px;
+  }
+
+  .slider {
+    width: 40px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+  }
 }

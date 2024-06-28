@@ -13,6 +13,7 @@
   --text-main: #313e51;
   --text-secondary: #626c7f;
   --bg-image-s: url('./assets/pattern-background-mobile-light.svg');
+  --bg-image-m: url('./assets/pattern-background-tablet-light.svg');
 
   --sun: url('./assets/icon-sun-dark.svg');
   --moon: url('./assets/icon-moon-dark.svg');
@@ -30,6 +31,7 @@
   --text-secondary: #abc1e1;
 
   --bg-image-s: url('./assets/pattern-background-mobile-dark.svg');
+  --bg-image-m: url('./assets/pattern-background-tablet-dark.svg');
 
   --sun: url('./assets/icon-sun-light.svg');
   --moon: url('./assets/icon-moon-light.svg');
@@ -50,10 +52,11 @@ body {
   width: 100vw;
   background: var(--bg-image-s);
   background-repeat: no-repeat;
-  background-position: center;
-  flex-direction: column;
+  background-size: cover;
+  /* background-position: center; */
+  /* flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .app {
@@ -173,6 +176,7 @@ header {
 
 .question-info {
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .question-number {
@@ -323,8 +327,101 @@ header {
 }
 
 .maxscore {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--text-secondary);
   text-align: center;
+}
+
+/* Responsives */
+@media (min-width: 768px) {
+  #root {
+    background-image: var(--bg-image-m);
+    background-size: auto;
+  }
+
+  .header-alone,
+  header.header {
+    padding-top: 57px;
+    margin-bottom: 50px;
+  }
+
+  .app {
+    padding: 0 64px;
+  }
+
+  .starting-screen-info {
+    margin-bottom: 64px;
+  }
+
+  .starting-screen-info h1 {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+
+  .starting-screen-info p {
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .subjects__container {
+    gap: 24px;
+  }
+
+  .left {
+    gap: 32px;
+  }
+
+  .subject-title {
+    font-size: 28px;
+  }
+
+  .question-number {
+    font-size: 20px;
+    margin: 0 0 27px;
+  }
+
+  .question-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  .question-info {
+    margin-bottom: 64px;
+  }
+
+  .options {
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .button {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .endGame h1 {
+    display: flex;
+    flex-direction: column;
+    font-size: 66px;
+  }
+
+  .score {
+    font-size: 144px;
+  }
+
+  .maxscore {
+    font-size: 24px;
+  }
+  .sun,
+  .moon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .right {
+    gap: 16px;
+  }
 }
