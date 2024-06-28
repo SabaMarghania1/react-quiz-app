@@ -14,6 +14,7 @@
   --text-secondary: #626c7f;
   --bg-image-s: url('./assets/pattern-background-mobile-light.svg');
   --bg-image-m: url('./assets/pattern-background-tablet-light.svg');
+  --bg-image-lg: url('./assets/pattern-background-desktop-light.svg');
 
   --sun: url('./assets/icon-sun-dark.svg');
   --moon: url('./assets/icon-moon-dark.svg');
@@ -32,6 +33,7 @@
 
   --bg-image-s: url('./assets/pattern-background-mobile-dark.svg');
   --bg-image-m: url('./assets/pattern-background-tablet-dark.svg');
+  --bg-image-lg: url('./assets/pattern-background-desktop-dark.svg');
 
   --sun: url('./assets/icon-sun-light.svg');
   --moon: url('./assets/icon-moon-light.svg');
@@ -172,6 +174,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .question-info {
@@ -333,6 +336,13 @@ header {
   text-align: center;
 }
 
+.button {
+  margin-bottom: 139px;
+}
+
+.options__container {
+  width: 100%;
+}
 /* Responsives */
 @media (min-width: 768px) {
   #root {
@@ -423,5 +433,119 @@ header {
 
   .right {
     gap: 16px;
+  }
+
+  .button {
+    margin-bottom: 57px;
+  }
+}
+
+@media (min-width: 1161px) {
+  .header-alone,
+  header.header {
+    padding-top: 97px;
+    margin-bottom: 99px;
+  }
+  #root {
+    background-image: var(--bg-image-lg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .app {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .starting-screen {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: auto;
+  }
+
+  .starting-screen-info {
+    width: 465px;
+  }
+
+  .starting-screen-info h1 {
+    margin-bottom: 48px;
+  }
+
+  .subjects__container {
+    width: 564px;
+  }
+
+  .subject__container {
+    padding: 20px;
+  }
+
+  .subject__title {
+    font-size: 28px;
+  }
+
+  .question {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .question-info {
+    display: flex;
+    flex-direction: column;
+    width: 465px;
+  }
+
+  .options__container {
+    width: 544px;
+  }
+
+  .option {
+    width: 100%;
+    height: 56px;
+  }
+
+  .option.subject__container {
+    padding: 40px 20px;
+    border-radius: 24px;
+  }
+
+  .type-box {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    border-radius: 10px;
+  }
+
+  div.left-side {
+    padding: 20px 0;
+  }
+
+  .question-title {
+    margin-bottom: 158px;
+  }
+
+  .question-progress {
+    margin-bottom: 0;
+  }
+
+  .endGame {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .endGame header {
+    margin-bottom: 0;
+  }
+
+  .end-container {
+    width: 468px;
   }
 }

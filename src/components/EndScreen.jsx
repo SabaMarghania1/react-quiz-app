@@ -9,18 +9,20 @@ export default function EndScreen({selectedSubject, score, numQuestions, dispatc
         </h1>
       </header>
 
-      <div className="end-container">
-        <Subject subject={selectedSubject} />
+      <div className="right-side">
+        <div className="end-container">
+          <Subject subject={selectedSubject} />
 
-        <div className="scores">
-          <p className="score">{score}</p>
-          <p className="maxscore">out of {numQuestions}</p>
+          <div className="scores">
+            <p className="score">{score}</p>
+            <p className="maxscore">out of {numQuestions}</p>
+          </div>
         </div>
-      </div>
 
-      <button className="button" onClick={() => dispatch({type: 'RESET'})}>
-        Play Again
-      </button>
+        <button className="button" onClick={() => dispatch({type: 'RESET'})}>
+          Play Again
+        </button>
+      </div>
     </div>
   );
 }
