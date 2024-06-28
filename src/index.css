@@ -258,7 +258,8 @@ header {
 }
 
 .option.incorrect {
-  border-color: #ee5454;
+  outline: none;
+  border: #ee5454 2px solid;
 }
 
 .type-box.correct-box {
