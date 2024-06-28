@@ -40,7 +40,12 @@ export default function App() {
           />
         )}
         {stage === 'result' && (
-          <EndScreen selectedSubject={selectedSubject} score={score} numQuestions={numQuestions} />
+          <EndScreen
+            selectedSubject={selectedSubject}
+            score={score}
+            numQuestions={numQuestions}
+            dispatch={dispatch}
+          />
         )}
       </Main>
     </div>

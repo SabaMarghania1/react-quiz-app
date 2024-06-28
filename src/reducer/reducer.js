@@ -2,7 +2,7 @@ export const initialState = {
   theme: 'light',
   selectedSubjectData: '',
   stage: 'ready',
-  index: 4,
+  index: 9,
   selectedOption: null,
   submitted: null,
   score: 0,
@@ -20,7 +20,7 @@ export function reducer(state, action) {
     case 'SELECT_SUBJECT':
       return {...state, selectedSubject: action.payload, stage: 'startGame'};
     case 'SELECT_OPTION':
-      return {...state, selectedOption: action.payload, error: null}; // Clear error on option select
+      return {...state, selectedOption: action.payload, error: null};
     case 'SUBMIT_ANSWER':
       if (state.selectedOption === null) {
         return {...state, error: 'Please select an option before submitting.'};
@@ -29,7 +29,7 @@ export function reducer(state, action) {
         state.selectedSubject.questions[state.index].options[state.selectedOption] ===
         state.selectedSubject.questions[state.index].answer;
       const newScore = isCorrect ? state.score + 1 : state.score;
-      return {...state, submitted: true, error: null, score: newScore}; // Clear error on valid submit
+      return {...state, submitted: true, error: null, score: newScore};
     case 'NEXT_QUESTION':
       const nextIndex = state.index + 1;
       if (nextIndex >= state.selectedSubject.questions.length) {
@@ -37,6 +37,6 @@ export function reducer(state, action) {
       }
       return {...state, index: nextIndex, selectedOption: null, submitted: false, error: null};
     default:
-      return state;
+      return initialState;
   }
 }
